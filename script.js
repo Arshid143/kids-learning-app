@@ -164,13 +164,21 @@ let currentLetter="";
 let index=0;
 
 // GRID
-const grid=document.getElementById("grid");
+const letters = Object.keys(data);
 
-Object.keys(data).forEach(letter=>{
-let card=document.createElement("div");
-card.className="card";
-card.innerText=letter;
-card.onclick=()=>openPopup(letter);
+letters.forEach((letter, index) => {
+
+let card = document.createElement("div");
+card.className = "card";
+card.innerText = letter;
+card.onclick = () => openPopup(letter);
+
+// special alignment for Y and Z
+if(letter === "Y" || letter === "Z"){
+card.style.gridColumn = "span 2";  // center effect
+card.style.justifySelf = "center";
+}
+
 grid.appendChild(card);
 });
 
