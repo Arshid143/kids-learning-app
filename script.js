@@ -78,10 +78,7 @@ function repeatSpeak(){
 showItem();
 }
 
-// ================= QUIZ =================
-
-let quizLetter="";
-let quizIndex=0;
+// ================= QUIZ FIXED =================
 
 function openQuiz(){
 document.getElementById("quiz").classList.remove("hidden");
@@ -89,37 +86,37 @@ startQuiz();
 }
 
 function startQuiz(){
-let letters=Object.keys(data);
-quizLetter=letters[Math.floor(Math.random()*letters.length)];
-quizIndex=0;
 
-document.getElementById("question").innerText="Find: "+quizLetter;
+let letters = Object.keys(data);
 
-let options=document.getElementById("options");
-options.innerHTML="";
+// safe random letter ONLY from real data
+let quizLetter = letters[Math.floor(Math.random()*letters.length)];
 
-let correct=quizLetter;
+document.getElementById("question").innerText = "Find: " + quizLetter;
 
-let choices=["A","B","C","D","E","F","G","H"];
-let mix=[correct];
+let options = document.getElementById("options");
+options.innerHTML = "";
 
-while(mix.length<4){
-let r=choices[Math.floor(Math.random()*choices.length)];
-if(!mix.includes(r)) mix.push(r);
-}
+let mix = [...letters];
 
+// shuffle
 mix.sort(()=>Math.random()-0.5);
 
-mix.forEach(l=>{
+// show only 4 options max
+mix.slice(0,4).forEach(l=>{
 let btn=document.createElement("button");
 btn.innerText=l;
-btn.onclick=()=>checkAnswer(l);
+
+btn.onclick=()=>{
+checkAnswer(l, quizLetter);
+};
+
 options.appendChild(btn);
 });
 }
 
-function checkAnswer(ans){
-if(ans===quizLetter){
+function checkAnswer(ans, correct){
+if(ans===correct){
 speak("Correct");
 alert("🎉 Correct!");
 startQuiz();
