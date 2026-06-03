@@ -89,7 +89,9 @@ function startQuiz(){
 
 let letters = Object.keys(data);
 
-// safe random letter ONLY from real data
+// safety check
+if(!letters.length) return;
+
 let quizLetter = letters[Math.floor(Math.random()*letters.length)];
 
 document.getElementById("question").innerText = "Find: " + quizLetter;
@@ -98,18 +100,19 @@ let options = document.getElementById("options");
 options.innerHTML = "";
 
 let mix = [...letters];
-
-// shuffle
 mix.sort(()=>Math.random()-0.5);
 
-// show only 4 options max
 mix.slice(0,4).forEach(l=>{
-let btn=document.createElement("button");
-btn.innerText=l;
+let btn = document.createElement("button");
+btn.innerText = l;
 
-btn.onclick=()=>{
+btn.onclick = function(){
 checkAnswer(l, quizLetter);
 };
+
+options.appendChild(btn);
+});
+}
 
 options.appendChild(btn);
 });
