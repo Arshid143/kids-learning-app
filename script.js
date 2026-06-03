@@ -1,9 +1,12 @@
+window.speechSynthesis.onvoiceschanged = () => {
+    speechSynthesis.getVoices();
+};
 const data = {
 A:[
 {name:"Apple",img:"assets/alphabet/apple.webp"},
+{name:"Arm",img:"assets/alphabet/arm.webp"},
 {name:"Ant",img:"assets/alphabet/ant.webp"},
-{name:"Airplane",img:"assets/alphabet/airplane.webp"},
-{name:"Arm",img:"assets/alphabet/arm.webp"}
+{name:"Airplane",img:"assets/alphabet/airplane.webp"}
 ],
 B:[
 {name:"Ball",img:"assets/alphabet/ball.webp"},
@@ -32,14 +35,14 @@ E:[
 F:[
 {name:"Fish",img:"assets/alphabet/fish.webp"},
 {name:"Fan",img:"assets/alphabet/fan.webp"},
-{name:"Fork",img:"assets/alphabet/fork.webp"},
-{name:"Fox",img:"assets/alphabet/fox.webp"}
+{name:"Fox",img:"assets/alphabet/fox.webp"},
+{name:"Fork",img:"assets/alphabet/fork.webp"}
 ],
 G:[
 {name:"Goat",img:"assets/alphabet/goat.webp"},
-{name:"Gun",img:"assets/alphabet/gun.webp"},
+{name:"Girl",img:"assets/alphabet/girl.webp"},
 {name:"Gift",img:"assets/alphabet/gift.webp"},
-{name:"Girl",img:"assets/alphabet/girl.webp"}
+{name:"Gun",img:"assets/alphabet/gun.webp"}
 ],
 H:[
 {name:"Hat",img:"assets/alphabet/hat.webp"},
@@ -57,7 +60,7 @@ J:[
 {name:"Jug",img:"assets/alphabet/jug.webp"},
 {name:"Jam",img:"assets/alphabet/jam.webp"},
 {name:"Jet",img:"assets/alphabet/jet.webp"},
-{name:"Joker",img:"assets/alphabet/joker.webp"}
+{name:"Jar",img:"assets/alphabet/jar.webp"}
 ],
 K:[
 {name:"Kite",img:"assets/alphabet/kite.webp"},
@@ -73,8 +76,8 @@ L:[
 ],
 M:[
 {name:"Monkey",img:"assets/alphabet/monkey.webp"},
-{name:"Milk",img:"assets/alphabet/milk.webp"},
 {name:"Moon",img:"assets/alphabet/moon.webp"},
+{name:"Milk",img:"assets/alphabet/milk.webp"},
 {name:"Mouse",img:"assets/alphabet/mouse.webp"}
 ],
 N:[
@@ -86,8 +89,8 @@ N:[
 O:[
 {name:"Orange",img:"assets/alphabet/orange.webp"},
 {name:"Owl",img:"assets/alphabet/owl.webp"},
-{name:"Oil",img:"assets/alphabet/oil.webp"},
-{name:"Ox",img:"assets/alphabet/ox.webp"}
+{name:"Ox",img:"assets/alphabet/ox.webp"},
+{name:"Oil",img:"assets/alphabet/oil.webp"}
 ],
 P:[
 {name:"Parrot",img:"assets/alphabet/parrot.webp"},
@@ -140,8 +143,8 @@ W:[
 X:[
 {name:"X-ray",img:"assets/alphabet/xray.webp"},
 {name:"Xylophone",img:"assets/alphabet/xylophone.webp"},
-{name:"Xerus",img:"assets/alphabet/xerus.webp"},
-{name:"X-mas",img:"assets/alphabet/xmas.webp"}
+{name:"Xmas",img:"assets/alphabet/xmas.webp"},
+{name:"Xerus",img:"assets/alphabet/xerus.webp"}
 ],
 Y:[
 {name:"Yak",img:"assets/alphabet/yak.webp"},
@@ -160,15 +163,15 @@ Z:[
 let currentLetter="";
 let index=0;
 
+// GRID
 const grid=document.getElementById("grid");
 
-// GRID CREATE
 Object.keys(data).forEach(letter=>{
-let div=document.createElement("div");
-div.className="card";
-div.innerText=letter;
-div.onclick=()=>openPopup(letter);
-grid.appendChild(div);
+let card=document.createElement("div");
+card.className="card";
+card.innerText=letter;
+card.onclick=()=>openPopup(letter);
+grid.appendChild(card);
 });
 
 // OPEN POPUP
@@ -219,12 +222,36 @@ if(e.target.id==="popup") closePopup();
 // SPEAK
 function speak(text){
 speechSynthesis.cancel();
-let msg=new SpeechSynthesisUtterance(text);
-msg.rate=0.9;
-speechSynthesis.speak(msg);
+
+let msg = new SpeechSynthesisUtterance(text);
+
+// Get all available voices
+let voices = speechSynthesis.getVoices();
+
+// Try to find female English voice
+let femaleVoice = voices.find(v =>
+    v.name.toLowerCase().includes("female") ||
+    v.name.toLowerCase().includes("samantha") ||
+    v.name.toLowerCase().includes("google uk english female") ||
+    v.name.toLowerCase().includes("zira") ||
+    v.name.toLowerCase().includes("aria") ||
+    v.name.toLowerCase().includes("female")
+);
+
+// fallback: first English voice
+if(!femaleVoice){
+    femaleVoice = voices.find(v => v.lang.includes("en"));
 }
 
-// REPEAT
-function repeatSpeak(){
-showItem();
+// assign voice
+if(femaleVoice){
+    msg.voice = femaleVoice;
+}
+
+msg.lang = "en-US";
+msg.rate = 0.9;
+msg.pitch = 1.1;   // 👈 this makes it softer (more female-like)
+msg.volume = 1;
+
+speechSynthesis.speak(msg);
 }
