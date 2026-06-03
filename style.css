@@ -29,6 +29,16 @@ box-shadow:0 2px 6px rgba(0,0,0,0.2);
 user-select:none;
 }
 
+/* Y */
+.card:nth-child(25){
+grid-column:1 / span 2;
+}
+
+/* Z */
+.card:nth-child(26){
+grid-column:3 / span 2;
+}
+
 .popup{
 position:fixed;
 top:0;
