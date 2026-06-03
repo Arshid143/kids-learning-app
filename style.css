@@ -46,31 +46,33 @@ position:relative;
 background:white;
 width:92%;
 max-width:320px;
-padding-top:40px;
-padding-bottom:20px;
+
+padding:15px 10px 20px 10px;  /* reduced height */
+
 border-radius:20px;
 text-align:center;
 box-sizing:border-box;
-margin:0 auto;
-padding-left:10px;
-padding-right:10px;
 }
 
 .popup-header{
 position:absolute;
-top:-30px;
+top:-28px;
 left:50%;
 transform:translateX(-50%);
+
 background:#4CAF50;
 color:white;
-width:70px;
-height:70px;
+width:65px;
+height:65px;
+
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:34px;
+
+font-size:32px;
 font-weight:bold;
+
 box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
