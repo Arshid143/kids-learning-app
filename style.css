@@ -42,28 +42,50 @@ align-items:center;
 }
 
 .popup-box{
+position:relative;
 background:white;
-width:90%;
-max-width:350px;
-padding:15px;
-border-radius:16px;
+width:92%;
+max-width:320px;
+padding-top:40px;
+padding-bottom:20px;
+border-radius:20px;
 text-align:center;
+box-sizing:border-box;
+margin:0 auto;
+padding-left:10px;
+padding-right:10px;
 }
 
 .popup-header{
-font-size:48px;
+position:absolute;
+top:-30px;
+left:50%;
+transform:translateX(-50%);
+background:#4CAF50;
+color:white;
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
 font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 .popup-img{
-width:200px;
-height:200px;
+width:180px;
+height:180px;
 object-fit:contain;
+margin-top:10px;
+margin-bottom:10px;
 }
 
 .popup-text{
-font-size:22px;
-margin:10px 0;
+font-size:20px;
+margin:5px 0 10px 0;
+font-weight:600;
 }
 
 .nav button{
