@@ -113,11 +113,6 @@ checkAnswer(l, quizLetter);
 options.appendChild(btn);
 });
 }
-
-options.appendChild(btn);
-});
-}
-
 function checkAnswer(ans, correct){
 if(ans===correct){
 speak("Correct");
