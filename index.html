@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kids Learning App</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
 </head>
@@ -11,6 +12,10 @@
 <body>
 
 <h2 class="title">ABC Learning</h2>
+
+<div class="top-bar">
+  <button onclick="openQuiz()">🎮 Quiz Mode</button>
+</div>
 
 <div id="grid" class="grid"></div>
 
@@ -20,16 +25,31 @@
 
     <div id="popup-header" class="popup-header">A</div>
 
-    <img id="popup-img" class="popup-img" src="">
+    <img id="popup-img" class="popup-img">
 
     <div id="popup-text" class="popup-text"></div>
 
     <div class="nav">
-      <button onclick="prevItem()">◀ Prev</button>
-      <button onclick="nextItem()">Next ▶</button>
+      <button onclick="prevItem()">◀</button>
+      <button onclick="repeatSpeak()">🔁</button>
+      <button onclick="nextItem()">▶</button>
     </div>
 
     <button class="close" onclick="closePopup()">❌ Close</button>
+
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="popup hidden" onclick="closeQuizOutside(event)">
+  <div class="popup-box">
+
+    <h2>Find Letter</h2>
+    <div id="question" class="popup-header"></div>
+
+    <div id="options" class="quiz-options"></div>
+
+    <button class="close" onclick="closeQuiz()">Exit</button>
 
   </div>
 </div>
