@@ -10,8 +10,9 @@ A:[
 ],
 B:[
 {name:"Ball",img:"assets/alphabet/ball.webp"},
-{name:"Bat",img:"assets/alphabet/bat.webp"},
-{name:"Bird",img:"assets/alphabet/bird.webp"},
+{name:"Bat",img:"assets/alphabet/banana.webp"},
+{name:"Bird",img:"assets/alphabet/bag.webp"},
+{name:"Bird",img:"assets/alphabet/book.webp"},
 {name:"Bus",img:"assets/alphabet/bus.webp"}
 ],
 C:[
