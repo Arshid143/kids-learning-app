@@ -18,6 +18,7 @@ B:[
 C:[
 {name:"Cat",img:"assets/alphabet/cat.webp"},
 {name:"Car",img:"assets/alphabet/car.webp"},
+{name:"Cake",img:"assets/alphabet/cake.webp"},
 {name:"Cow",img:"assets/alphabet/cow.webp"},
 {name:"Cup",img:"assets/alphabet/cup.webp"}
 ],
