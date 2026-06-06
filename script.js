@@ -144,7 +144,7 @@ V:[
 W:[
 {name:"Watch",img:"assets/alphabet/watch.webp"},
 {name:"Water",img:"assets/alphabet/water.webp"},
-{name:"Wheel",img:"assets/alphabet/wheel.webp"},
+{name:"Whale",img:"assets/alphabet/whale.webp"},
 {name:"Wolf",img:"assets/alphabet/wolf.webp"}
 ],
 X:[
