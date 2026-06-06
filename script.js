@@ -36,9 +36,10 @@ E:[
 ],
 F:[
 {name:"Fish",img:"assets/alphabet/fish.webp"},
-{name:"Fan",img:"assets/alphabet/fan.webp"},
+{name:"Fan",img:"assets/alphabet/fan.webp"},    
+{name:"Finger",img:"assets/alphabet/finger.webp"},
 {name:"Fox",img:"assets/alphabet/fox.webp"},
-{name:"Fork",img:"assets/alphabet/fork.webp"}
+{name:"Flag",img:"assets/alphabet/flag.webp"}
 ],
 G:[
 {name:"Goat",img:"assets/alphabet/goat.webp"},
