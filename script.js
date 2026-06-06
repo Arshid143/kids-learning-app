@@ -59,7 +59,7 @@ I:[
 {name:"Ice cream",img:"assets/alphabet/icecream.webp"},
 {name:"Ink",img:"assets/alphabet/ink.webp"},
 {name:"Iron",img:"assets/alphabet/iron.webp"},
-{name:"Insect",img:"assets/alphabet/insect.webp"}
+{name:"Igloo",img:"assets/alphabet/igloo.webp"}
 ],
 J:[
 {name:"Jug",img:"assets/alphabet/jug.webp"},
