@@ -6,7 +6,7 @@ A:[
 {name:"Apple",img:"assets/alphabet/apple.webp"},
 {name:"Arm",img:"assets/alphabet/arm.webp"},
 {name:"Ant",img:"assets/alphabet/ant.webp"},
-{name:"Airplane",img:"assets/alphabet/airplane.webp"}
+{name:"Aeroplane",img:"assets/alphabet/aeroplane.webp"}
 ],
 B:[
 {name:"Ball",img:"assets/alphabet/ball.webp"},
