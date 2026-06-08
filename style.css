@@ -8,11 +8,11 @@ background:black;
 }
 
 .title{
-background:#4CAF50;
+background:linear-gradient(90deg,#FF9800,#4CAF50);
 color:black;
-padding:6px;
+padding:8px;
 margin:0;
-font-size:22px;
+font-size:28px;
 font-weight:bold;
 }
 
@@ -168,19 +168,6 @@ box-shadow:0 6px 14px rgba(0,0,0,0.25);
 
 .card:active{
 transform:scale(0.95);
-}
-
-.title{
-background:linear-gradient(
-90deg,
-#FF9800,
-#4CAF50
-);
-color:white;
-padding:8px;
-margin:0;
-font-size:24px;
-font-weight:bold;
 }
 
 .popup-sound{
