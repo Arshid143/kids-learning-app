@@ -1,6 +1,20 @@
 window.speechSynthesis.onvoiceschanged = () => {
     speechSynthesis.getVoices();
 };
+
+const colors = [
+"#FFCDD2",
+"#F8BBD0",
+"#E1BEE7",
+"#D1C4E9",
+"#BBDEFB",
+"#B2EBF2",
+"#C8E6C9",
+"#FFF9C4",
+"#FFE0B2",
+"#D7CCC8"
+];
+
 const data = {
 A:[
 {name:"Apple",img:"assets/alphabet/apple.webp"},
@@ -179,6 +193,7 @@ let card = document.createElement("div");
 card.className = "card";
 card.innerText = letter;
 card.onclick = () => openPopup(letter);
+card.style.background = colors[index % colors.length];
 
 // special alignment for Y and Z
 if(letter === "Y" || letter === "Z"){
