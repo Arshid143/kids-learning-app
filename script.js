@@ -89,7 +89,7 @@ K:[
 {name:"Knife",img:"assets/alphabet/knife.webp"}
 ],
 L:[
-{name:"Lion",img:"assets/alphabet/lion.webp"},
+{name:"Loin",img:"assets/alphabet/loin.webp"},
 {name:"Lamp",img:"assets/alphabet/lamp.webp"},
 {name:"Leaf",img:"assets/alphabet/leaf.webp"},
 {name:"Lock",img:"assets/alphabet/lock.webp"}
