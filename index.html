@@ -30,9 +30,14 @@
     <!-- <img id="popup-img" class="popup-img"> -->
 
     <div class="image-frame">
-    <img id="popup-img"
-        class="popup-img">
-    </div>
+
+  <button class="img-nav left" onclick="prevImage()">&#10094;</button>
+
+  <img id="popup-img" class="popup-img">
+
+  <button class="img-nav right" onclick="nextImage()">&#10095;</button>
+
+	</div>
 
     <div id="popup-text" class="popup-text"></div>
 
@@ -45,7 +50,12 @@
 
   </div>
 </div>
-
+<!--
+<button class="home-btn" onclick="window.location.href='../../index.html'">
+  <span class="home-icon">🏡</span>
+  <span class="home-text">Home</span>
+</button>
+-->
 <script src="script.js"></script>
 
 </body>
