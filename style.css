@@ -49,6 +49,7 @@ width:100%;
 
 .popup-close{
 position:absolute;
+z-index:100;
 top:10px;
 right:10px;
 width:40px;
@@ -166,6 +167,7 @@ transform:scale(0.95);
 
 .popup-sound{
 position:absolute;
+z-index:100;
 top:10px;
 left:10px;
 width:40px;
@@ -194,4 +196,58 @@ color:white;
 font-size:18px;
 font-weight:600;
 cursor:pointer;
+}
+
+.image-frame{
+  position: relative;
+  background:#f7f7f7;
+  border-radius:18px;
+  padding:10px;
+  margin-top:25px;
+  margin-bottom:10px;
+}
+
+.img-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.img-nav.left{
+  left:5px;
+}
+
+.img-nav.right{
+  right:5px;
+}
+
+.home-btn{
+    width:100%;
+    margin-top:12px;
+    padding:14px;
+
+    border:none;
+    border-radius:14px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    background:linear-gradient(135deg,#FF9800,#4CAF50);
+    color:white;
+
+    cursor:pointer;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.home-btn:active{
+    transform:scale(0.97);
 }
