@@ -17,7 +17,7 @@ const colors = [
 
 const data = {
 A:[
-{name:"Apple",img:"../../assets/apple.webp"},
+{name:"Apple",img:"assets/alphabets/apple.webp"},
 {name:"Arm",img:"../../assets/arm.webp"},
 {name:"Ant",img:"../../assets/ant.webp"},
 {name:"Aeroplane",img:"../../assets/aeroplane.webp"}
