@@ -305,3 +305,8 @@ msg.volume = 1;
 
 speechSynthesis.speak(msg);
 }
+
+// repeat sound
+function repeatSpeak(){
+showItem();
+}
